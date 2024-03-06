@@ -38,7 +38,9 @@ export class RpgComponent implements OnInit {
 
 class MainScene extends Phaser.Scene {
 
-  NUM_STARS = 20;
+  NUM_STARS = 18;
+  PARCHMENT_COLOR = 0xFCF5E5;
+
   stars!: Phaser.GameObjects.Sprite[];
   
   heartCounter!: Phaser.GameObjects.Sprite;
@@ -64,6 +66,7 @@ class MainScene extends Phaser.Scene {
 
     this.load.image('ground', 'assets/platform.png');
     this.load.image('star', 'assets/star.png');
+    this.load.image('scroll', 'assets/scroll.png');
     this.load.image('heartCounter', 'assets/small_heart.png');
     this.load.spritesheet('wizard',
         'assets/wizard_idle.png',
@@ -133,6 +136,10 @@ class MainScene extends Phaser.Scene {
     this.heartCounter.displayWidth = 32;
     this.heartCounter.displayHeight = 32;
 
+
+    // Draw dialogue box
+    this.drawDialogueBox(this.cameras.main.centerX, this.cameras.main.centerY, 300, 163, this.PARCHMENT_COLOR, "Welcome, traveler!\n\nI am the famed wizard\nSaj I. Tarius.\n\nWelcome to my wizardly world!");
+
   }
   
   override update() {
@@ -184,17 +191,19 @@ class MainScene extends Phaser.Scene {
   }
 
 drawDialogueBox(x: number, y: number, width: number, height: number, color: number, text: string) {
-  // Draw the dialogue box
-  const dialogueBox = this.add.graphics();
-  dialogueBox.fillStyle(color, 1);
-  dialogueBox.fillRect(x - width / 2, y - height / 2, width, height);
+    // Create the dialogue box sprite
+    const dialogueBox = this.add.sprite(x, y, 'scroll');
+    dialogueBox.displayWidth = width;
+    dialogueBox.displayHeight = height;
 
-  // Add text to the dialogue box
-  const dialogueText = this.add.text(x, y, text, {
+    const dialogueText = this.add.text(x, y, text, {
       fontFamily: 'Courier New',
-      fontSize: '16px',
-      color: '#000000'
-  }).setOrigin(0.5);
+      fontSize: '16px', // Increase the font size to 24px
+      color: '#ffe27d',
+      fontStyle: 'bold', // Set font weight to bold
+      align: 'center',
+      wordWrap: { width: width - 20, useAdvancedWrap: true } // Wrap the text
+    }).setOrigin(0.5, 0); // Set origin to center horizontally and vertically
 
   // Adjust the text position to fit within the dialogue box
   dialogueText.setPosition(x, y - dialogueText.displayHeight / 2);
