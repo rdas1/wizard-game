@@ -1,0 +1,17 @@
+{
+    "frames": [
+      {"filename": "tile0.png", "frame": {"x": 0, "y": 0, "w": 232, "h": 232}},
+      {"filename": "tile1.png", "frame": {"x": 232, "y": 0, "w": 232, "h": 232}},
+      {"filename": "tile2.png", "frame": {"x": 464, "y": 0, "w": 232, "h": 232}},
+      {"filename": "tile3.png", "frame": {"x": 0, "y": 232, "w": 232, "h": 232}},
+      {"filename": "tile4.png", "frame": {"x": 232, "y": 232, "w": 232, "h": 232}},
+      {"filename": "tile5.png", "frame": {"x": 464, "y": 232, "w": 232, "h": 232}},
+      {"filename": "tile6.png", "frame": {"x": 0, "y": 464, "w": 232, "h": 232}},
+      {"filename": "tile7.png", "frame": {"x": 232, "y": 464, "w": 232, "h": 232}},
+      {"filename": "tile8.png", "frame": {"x": 464, "y": 464, "w": 232, "h": 232}},
+      {"filename": "tile9.png", "frame": {"x": 0, "y": 696, "w": 232, "h": 232}},
+      {"filename": "tile10.png", "frame": {"x": 232, "y": 696, "w": 232, "h": 232}},
+      {"filename": "tile11.png", "frame": {"x": 464, "y": 696, "w": 232, "h": 232}}
+    ]
+  }
+  

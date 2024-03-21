@@ -1,8 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 html,
-body,
-canvas {
+body, canvas {
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden !important;
+  background-color: #000000;
+}
+
+canvas {
+    height: 87vh; /* Set the canvas height to 90% of the viewport height */
+    width: 100%; /* Ensure the canvas width spans the entire viewport width */
+    display: block; /* Make sure the canvas behaves as a block element */
 }
